@@ -1,0 +1,13 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="08/2024-08-21-create-document-tbl.sql" relativeToChangelogFile="true"/>
+    <include file="08/2024-08-21-create-country-tbl.sql" relativeToChangelogFile="true"/>
+    <include file="08/2024-08-21-create-city-tbl.sql" relativeToChangelogFile="true"/>
+    <include file="08/2024-08-21-load-country-data.xml" relativeToChangelogFile="true"/>
+    <include file="08/2024-08-21-load-city-data.xml" relativeToChangelogFile="true"/>
+    <include file="08/2024-08-21-create-hotel-tbl.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

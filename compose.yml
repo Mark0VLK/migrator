@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: migration_db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: migration_db
+    ports:
+      - "5440:5432"
