@@ -26,7 +26,7 @@ import static org.example.migrator.util.EntityUtilBuilder.buildHotel;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SynchronousDocumentCvsParserServiceImpl implements DocumentParserService {
+public class DocumentCvsParserServiceImpl implements DocumentParserService {
 
     private final HotelService hotelService;
     private final CountryService countryService;
