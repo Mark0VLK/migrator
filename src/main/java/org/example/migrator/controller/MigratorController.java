@@ -2,7 +2,7 @@ package org.example.migrator.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.migrator.controller.response.DocumentResponse;
-import org.example.migrator.service.DocumentService;
+import org.example.migrator.service.migrator.MigratorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +14,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("api/v1/document")
+@RequestMapping("api/v1/parser")
 @RequiredArgsConstructor
-public class DocumentController {
+public class MigratorController {
 
-    private final DocumentService documentService;
+    private final MigratorService migratorService;
 
-    @PostMapping("/send")
+    @PostMapping
     public ResponseEntity<DocumentResponse> sendDocuments(@RequestBody MultipartFile file) throws IOException {
-        return new ResponseEntity<>(documentService.fileProcessing(file), HttpStatus.OK);
+        return new ResponseEntity<>(migratorService.dataMigration(file), HttpStatus.OK);
     }
 }
