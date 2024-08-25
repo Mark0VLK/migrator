@@ -19,7 +19,7 @@ import static org.example.migrator.util.EntityUtilBuilder.responseBuilder;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MigratorServiceImpl implements MigratorService {
+public class SynchronousMigratorServiceImpl implements MigratorService {
 
     private final DocumentService documentService;
     private final FileValidationService fileValidationService;
@@ -28,8 +28,9 @@ public class MigratorServiceImpl implements MigratorService {
     @Override
     @Transactional
     public DocumentResponse dataMigration(MultipartFile file) {
+        log.info(" ----- синхронная обработка ----- ");
         final String fileName = file.getOriginalFilename();
-        final Long fileSize = file.getSize();
+        final Long fileSize = file.getSize() / 1024;
         try {
             if (fileValidationService.isFileExtensionAllowed(fileName) &&
                     fileValidationService.IsFileSizeAllowed(file.getSize())) {

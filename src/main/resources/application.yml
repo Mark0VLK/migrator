@@ -21,9 +21,13 @@ spring:
 
   liquibase:
     change-log: db/migration/changelog/0001_changelog.xml
+    drop-first: true
 
 file:
   properties:
     allowed-extensions:
       - cvs
-    max-size: 100
+    max-size: 200
+  processing:
+    size:
+      threshold: 100
